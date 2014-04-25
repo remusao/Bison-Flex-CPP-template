@@ -53,3 +53,5 @@ Acknowledgement
 ---------------
 
 The repository is born after a spent some time working my way to integrate Bison and Flex into my project. I thought this work could be useful in the futur, when a scanner or parser is needed.
+
+As Bison and Flex can be complicated to use, there may be easier alternatives such as Boost spirit that better integrates in `C++` code.
