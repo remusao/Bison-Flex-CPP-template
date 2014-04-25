@@ -13,7 +13,7 @@ $ ./configure
 $ make
 ```
 
-This should produce an executable `parser` at the root of your `bison-flex-template` directory. By default it read its input from `stdin`:
+This should produce an executable `parser` at the root of your `bison-flex-template` directory. By default it reads its input from `stdin`:
 
 ```sh
 $ echo "foo" | ./parser
@@ -24,20 +24,20 @@ $ echo "foo" | ./parser
 # 1.5-2.1: syntax error, unexpected TOK_EOF, expecting $end
 ```
 
-By default, the scanner don't recognize any token except `eof` (end of file, or end of input), and every character read is considered an unknown token, that's why every letter is reported as an error.
+By default, the scanner doesn't recognize any token except `eof` (end of file, or end of input), and every character read is considered an unknown token, that's why every letter is reported as an error.
 We see that location is updated as each line starts with a couple `l.c` where `l` is the line and `c` is the column of the token. The four first lines are Lexer errors (unrecognised tokens), but the
-last is a Parser error (since our grammar don't have any rule).
+last is a Parser error (since our grammar doesn't have any rule).
 
 Customization
 -------------
 
-I won't write a complete explanation on how Bison and Flex work but once you get a program structure that run well (which can be quite difficult... that's why I decided to create this repository), we proceed as follows to customize our lexer and parser:
+I won't write a complete explanation on how Bison and Flex work but once you get a program structure that runs well (which can be quite difficult... that's why I decided to create this repository), we proceed as follows to customize our lexer and parser:
 
 * Write lexing rules into `src/parse/scan.ll`
 * Write grammar in `src/parse/parse.yy`
 * Interact with parser through the driver, as is shown in `main.cc`
     * Include `driver.hh`
-    * Create a Driver object
+    * Create a `Driver` object
     * Use one of `parse()` or `parse_file()` functions (read from `stdin` and a file respectively)
 
 
