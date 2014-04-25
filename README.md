@@ -34,6 +34,7 @@ I won't write a complete explanation on how Bison and Flex work but once you get
 
 * Write scanner `src/parse/scan.ll`, you can declare:
     * Named regex (follow the example of `blank` and `eol`
+    * Flex options
     * Stacks to simulate contexts (useful for comments for example)
     * Tokens and associated code, one by line `{blank}  { /* C++ code goes here */ return TOKEN; }` (`TOKEN` will be caught by Bison that will try to match it with the grammar)
 * Write parser `src/parse/parse.yy`, you can declare:
@@ -64,6 +65,6 @@ Dependencies
 Acknowledgement
 ---------------
 
-The repository is born after a spent some time working my way to integrate Bison and Flex into my project. I thought this work could be useful in the futur, when a scanner or parser is needed.
+The repository is born after I spent some time working my way to integrate Bison and Flex into my project. I thought this work could be useful in the futur, when a scanner or parser is needed.
 
 As Bison and Flex can be complicated to use, there may be easier alternatives such as Boost spirit that better integrates in `C++` code.
