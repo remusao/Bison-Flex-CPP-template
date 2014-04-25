@@ -1,13 +1,13 @@
-#! /bin/bash
+#! /usr/bin/env sh
 
-echo -e "\033[33m -------------------------------------------\033[37m"
-echo -e "\033[33m|                    PARSER                 |\033[37m"
-echo -e "\033[33m|                  CONFIGURE                |\033[37m"
-echo -e "\033[33m -------------------------------------------\033[37m"
+echo "\033[33m -------------------------------------------\033[37m"
+echo "\033[33m|                    PARSER                 |\033[37m"
+echo "\033[33m|                  CONFIGURE                |\033[37m"
+echo "\033[33m -------------------------------------------\033[37m"
 
 
 # Function that calls CMake with the corrects CFLAGS
-function call_CMake()
+call_CMake()
 {
   cd build/
   if [ "${1}" = "" ] ; then
@@ -21,21 +21,21 @@ function call_CMake()
     cd ../
     rm -fr build/
     echo
-    echo -e "\033[31m<< An error occured while configuring >>\033[37m"
-    echo -e "\033[31m<<        Please, report this bug     >>\033[37m"
+    echo "\033[31m<< An error occured while configuring >>\033[37m"
+    echo "\033[31m<<        Please, report this bug     >>\033[37m"
     echo
     return "1"
   fi;
 
   cd ../
   echo
-  echo -e "\033[32m<< Project is now ready to be built >>\033[37m"
-  echo -e "\033[32m     << Run \`make\` to continue >>\033[37m"
+  echo "\033[32m<< Project is now ready to be built >>\033[37m"
+  echo "\033[32m     << Run \`make\` to continue >>\033[37m"
 }
 
 
 # Function that builds CFLAGS according to arguments
-function parse_opt()
+parse_opt()
 {
   DEBUG=""
 
@@ -57,20 +57,20 @@ function parse_opt()
 
 
 # Print the Usage of the configure script
-function print_usage()
+print_usage()
 {
   echo
-  echo -e "Configuring Parser project"
-  echo -e "Usage: ./configure [--with-debug] [--help]"
-  echo -e "  All the arguments are optionnals but if --help is given"
-  echo -e "the program exit, displaying this Usage."
-  echo -e "  If no argument is passed, Makefile will be generated with"
-  echo -e "default CFLAGS and no debug mode."
-  echo -e "  You can pass as much arguments as you like."
-  echo -e ""
-  echo -e "--help       - Display this Usage and exit program"
-  echo -e "--with-debug - Generate Makefile that will build the"
-  echo -e "               project with debugs CFLAGS (-g)."
+  echo "Configuring Parser project"
+  echo "Usage: ./configure [--with-debug] [--help]"
+  echo "  All the arguments are optionnals but if --help is given"
+  echo "the program exit, displaying this Usage."
+  echo "  If no argument is passed, Makefile will be generated with"
+  echo "default CFLAGS and no debug mode."
+  echo "  You can pass as much arguments as you like."
+  echo ""
+  echo "--help       - Display this Usage and exit program"
+  echo "--with-debug - Generate Makefile that will build the"
+  echo "               project with debugs CFLAGS (-g)."
   echo
 }
 
