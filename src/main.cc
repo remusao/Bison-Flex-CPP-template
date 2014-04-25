@@ -1,11 +1,10 @@
 #include "parse/driver.hh"
 
 
-int
-main ()
+int main()
 {
-  parse::Driver driver;
-  driver.parse ();
+    parse::Driver driver;
+    driver.parse();
 
-  return 0;
+    return 0;
 }

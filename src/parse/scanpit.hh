@@ -7,7 +7,7 @@
 
 # ifndef YY_DECL
 #  define YY_DECL parse::Parser::token_type                         \
-     parse::Scanner::yylex(parse::Parser::semantic_type* yylval, \
+     parse::Scanner::yylex(parse::Parser::semantic_type* yylval,    \
                               parse::Parser::location_type*,        \
                               parse::Driver& driver)
 # endif
@@ -22,19 +22,20 @@
 
 namespace parse
 {
-  class Scanner : public parseFlexLexer
-  {
-    public:
-      Scanner ();
+    class Scanner : public parseFlexLexer
+    {
+        public:
+            Scanner();
 
-      virtual ~Scanner ();
+            virtual ~Scanner();
 
-      virtual Parser::token_type yylex (Parser::semantic_type* yylval,
-                                        Parser::location_type* l,
-                                        Driver& driver);
+            virtual Parser::token_type yylex(
+                Parser::semantic_type* yylval,
+                Parser::location_type* l,
+                Driver& driver);
 
-      void set_debug (bool b);
-  };
+            void set_debug(bool b);
+    };
 }
 
 #endif // SCANPIT_HH_

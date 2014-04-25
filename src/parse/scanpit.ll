@@ -12,15 +12,15 @@
     driver.location_->step ();                      \
   } while (0)
 
-#define COL(Col)				    \
+#define COL(Col)				                    \
   driver.location_->columns (Col)
 
-#define LINE(Line)				    \
-  do{						    \
-    driver.location_->lines (Line);		    \
+#define LINE(Line)				                    \
+  do{						                        \
+    driver.location_->lines (Line);		            \
  } while (0)
 
-#define YY_USER_ACTION				    \
+#define YY_USER_ACTION				                \
   COL(yyleng);
 
 
@@ -81,26 +81,26 @@ eol     [\n\r]+
 namespace parse
 {
 
-  Scanner::Scanner ()
-    : parseFlexLexer ()
-  {
-  }
+    Scanner::Scanner()
+    : parseFlexLexer()
+    {
+    }
 
-  Scanner::~Scanner ()
-  {
-  }
+    Scanner::~Scanner()
+    {
+    }
 
-  void Scanner::set_debug (bool b)
-  {
-    yy_flex_debug = b;
-  }
+    void Scanner::set_debug(bool b)
+    {
+        yy_flex_debug = b;
+    }
 }
 
 #ifdef yylex
 # undef yylex
 #endif
 
-int parseFlexLexer::yylex ()
+int parseFlexLexer::yylex()
 {
   std::cerr << "call parsepitFlexLexer::yylex()!" << std::endl;
   return 0;

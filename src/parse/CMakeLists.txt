@@ -1,6 +1,3 @@
-set(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wextra -g")
-set(CMAKE_CXX_FLAGS "-Wall -Wextra")
-
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
