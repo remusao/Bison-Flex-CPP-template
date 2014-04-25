@@ -17,15 +17,14 @@ This should produce an executable `parser` at the root of your `bison-flex-templ
 
 ```sh
 $ echo "foo" | ./parser
-# 1.1 Unexpected token : t
+# 1.1 Unexpected token : f
 # 1.2 Unexpected token : o
-# 1.3 Unexpected token : t
-# 1.4 Unexpected token : o
-# 1.5-2.1: syntax error, unexpected TOK_EOF, expecting $end
+# 1.3 Unexpected token : o
+# 1.4-2.1: syntax error, unexpected TOK_EOF, expecting $end
 ```
 
-By default, the scanner doesn't recognize any token except `eof` (end of file, or end of input), and every character read is considered an unknown token, that's why every letter is reported as an error.
-We see that location is updated as each line starts with a couple `l.c` where `l` is the line and `c` is the column of the token. The four first lines are Lexer errors (unrecognised tokens), but the
+By default, the scanner doesn't recognize any token except `eol` (end of line), and every character read is considered an unknown token, that's why every letter is reported as an error.
+We see that location is updated as each line starts with a couple `line.column` to indicate where the current token begins. The three first lines are Lexer errors (unrecognised tokens), but the
 last is a Parser error (since our grammar doesn't have any rule).
 
 Customization
