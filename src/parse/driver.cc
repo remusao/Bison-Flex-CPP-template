@@ -1,6 +1,6 @@
 #include "driver.hh"
 #include "parser.hh"
-#include "scanpit.hh"
+#include "scanner.hh"
 
 namespace parse
 {

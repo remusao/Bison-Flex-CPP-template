@@ -9,8 +9,8 @@ file(GLOB HXX_FILES *.hxx)
 find_package(BISON)
 find_package(FLEX)
 
-bison_target(Parser parsepit.yy ${CMAKE_CURRENT_BINARY_DIR}/parser.cc)
-flex_target(Scanner scanpit.ll ${CMAKE_CURRENT_BINARY_DIR}/scaner.cc)
+bison_target(Parser parse.yy ${CMAKE_CURRENT_BINARY_DIR}/parser.cc)
+flex_target(Scanner scan.ll ${CMAKE_CURRENT_BINARY_DIR}/scanner.cc)
 
 add_flex_bison_dependency(Scanner Parser)
 

@@ -1,7 +1,7 @@
 %{     /* PARSER */
 
 #include "parser.hh"
-#include "scanpit.hh"
+#include "scanner.hh"
 
 #define yylex driver.scanner_->yylex
 %}

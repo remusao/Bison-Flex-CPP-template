@@ -1,7 +1,7 @@
 %{                                                            /* -*- C++ -*- */
 
 #include "parser.hh"
-#include "scanpit.hh"
+#include "scanner.hh"
 #include "driver.hh"
 
 /*  Defines some macros to update locations */
