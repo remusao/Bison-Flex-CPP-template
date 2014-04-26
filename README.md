@@ -20,12 +20,10 @@ $ echo "foo" | ./parser
 # 1.1 Unexpected token : f
 # 1.2 Unexpected token : o
 # 1.3 Unexpected token : o
-# 1.4-2.1: syntax error, unexpected TOK_EOF, expecting $end
 ```
 
 By default, the scanner doesn't recognize any token except `eol` (end of line), and every character read is considered an unknown token, that's why every letter is reported as an error.
-We see that location is updated as each line starts with a couple `line.column` to indicate where the current token begins. The three first lines are Lexer errors (unrecognised tokens), but the
-last is a Parser error (since our grammar doesn't have any rule).
+We see that location is updated as each line starts with a couple `line.column` to indicate where the current token begins. The three lines are Lexer errors (unrecognised tokens).
 
 Customization
 -------------

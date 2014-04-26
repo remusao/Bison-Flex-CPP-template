@@ -48,8 +48,9 @@
 }
 
 /* Tokens */
-%token TOK_EOF
+%token TOK_EOF 0
 
+/* Entry point of grammar */
 %start start
 
 %%
