@@ -36,10 +36,10 @@
 %locations
 %defines
 %debug
-%define api.namespace { parse }
-%define parser_class_name { Parser }
-%parse-param { Driver &driver }
-%lex-param { Driver &driver }
+%define api.namespace {parse}
+%define parser_class_name {Parser}
+%parse-param {Driver &driver}
+%lex-param {Driver &driver}
 %error-verbose
 
 %union
