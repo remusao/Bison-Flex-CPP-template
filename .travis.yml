@@ -1,0 +1,11 @@
+sudo: false
+dist: trusty
+language: cpp
+
+compiler:
+  - clang
+  - gcc
+
+notifications:
+  email:
+    on_failure: change
