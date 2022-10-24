@@ -1,5 +1,5 @@
 #Minimum version of CMake to build this project
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.12)
 
 # Declaration et nommage du projet
 project(parser)

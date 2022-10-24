@@ -37,10 +37,10 @@
 %defines
 %debug
 %define api.namespace {parse}
-%define parser_class_name {Parser}
+%define api.parser.class {Parser}
 %parse-param {Driver &driver}
 %lex-param {Driver &driver}
-%error-verbose
+%define parse.error verbose
 
 %union
 {
