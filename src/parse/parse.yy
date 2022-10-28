@@ -65,9 +65,9 @@ start:
 
 namespace parse
 {
-    void Parser::error(const location&, const std::string& m)
+    void Parser::error(const location& l, const std::string& m)
     {
-        std::cerr << *driver.location_ << ": " << m << std::endl;
+        std::cerr << l << ": " << m << std::endl;
         driver.error_ = (driver.error_ == 127 ? 127 : driver.error_ + 1);
     }
 }
