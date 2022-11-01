@@ -7,7 +7,6 @@ namespace parse
     Driver::Driver()
         : scanner_(new Scanner()),
           parser_(new Parser(*this)),
-          location_(new location()),
           error_(0)
     {
     }
@@ -16,13 +15,10 @@ namespace parse
     {
         delete parser_;
         delete scanner_;
-        delete location_;
     }
 
     void Driver::reset()
     {
-        delete location_;
-        location_ = new location();
         error_ = 0;
     }
 
